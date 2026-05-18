@@ -1,0 +1,73 @@
+body {
+    background: #111;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.calc {
+    position: relative;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 20px;
+    width: 260px;
+    box-shadow: 0 0 30px rgba(255,0,128,0.5);
+    overflow: hidden;
+}
+
+.calc::before {
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: url(./file-Mqk1U4cbMmh4L32Dey7SGS[1].webp) no-repeat center center;
+    background-size: cover;
+    opacity:0.2;
+}
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    text-align: right;
+    padding: 10px;
+    background: #000;
+    color: #0ff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px #0ff;
+}
+.btns {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:12px;
+    position: relative;
+}
+button {
+    padding: 18px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #222;
+    color: #fff;
+}
+button:active {
+    transform: scale(0.92);
+    box-shadow: 0 0 15px rgb(128, 169, 169);
+}
+.op { background:#440055; }
+.eq { background:#0099ff; grid-row: span 2; }
+.zero { grid-column: span 2; }
+@keyframes pulseRGB {
+    0% { box-shadow: 0 0 10px rgba(255,0,255,0.6); }
+    25% { box-shadow: 0 0 15px rgba(0,255,255,0.6); }
+    50% { box-shadow: 0 0 20px rgba(255,255,0,0.6); }
+    75% { box-shadow: 0 0 15px rgba(255,0,255,0.6); }
+    100% { box-shadow: 0 0 10px rgba(0,255,255,0.6); }
+}
+
+button:hover {
+    animation: pulseRGB 1s infinite;
+}
